@@ -15,6 +15,7 @@ export class ListaArticulosComponent implements OnInit {
 
   articulos: any[] = [
        {
+           imagen: '/assets/art01.jpg',
            id: 2,
            descripcion: 'Articulo X',
            codigo: 'xsd-143',
