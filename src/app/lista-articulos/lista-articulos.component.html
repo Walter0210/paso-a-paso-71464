@@ -1,0 +1,28 @@
+<div>
+  <h1>{{titulo+ " en angular v" + versionAngular()}}</h1>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Descripción</th>
+          <th>Código</th>
+          <th>Cantidad</th>
+          <th>Precio</th>
+          <th>Puntaje</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tbody>
+               <tr *ngFor="let articulo of articulos">
+                   <td></td>
+                   <td>{{articulo.descripcion}}</td>
+                   <td>{{articulo.codigo}}</td>
+                   <td>{{articulo.cantidad}}</td>
+                   <td>{{articulo.precio}}</td>
+                   <td>{{articulo.puntaje}}</td>
+               </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
