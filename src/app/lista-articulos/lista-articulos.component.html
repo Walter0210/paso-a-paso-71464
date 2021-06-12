@@ -15,7 +15,7 @@
       <tbody>
         <tbody>
                <tr *ngFor="let articulo of articulos">
-                   <td><img src="articulo.Imagen"></td>
+                   <td><img [src]='articulo.imagen'></td>
                    <td>{{articulo.descripcion}}</td>
                    <td>{{articulo.codigo}}</td>
                    <td>{{articulo.cantidad}}</td>

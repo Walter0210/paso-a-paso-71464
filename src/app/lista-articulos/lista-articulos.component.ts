@@ -15,7 +15,7 @@ export class ListaArticulosComponent implements OnInit {
 
   articulos: any[] = [
        {
-           imagen: '/assets/art01.jpg',
+           imagen: 'src/assets/art01.png',
            id: 2,
            descripcion: 'Articulo X',
            codigo: 'xsd-143',
@@ -24,6 +24,7 @@ export class ListaArticulosComponent implements OnInit {
            puntaje: 4
        },
        {
+           imagen: '/assets/art02.jpg',
            id: 5,
            descripcion: 'Articulo Y',
            codigo: 'dlg-912',
