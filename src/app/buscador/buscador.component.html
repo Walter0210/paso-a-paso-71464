@@ -6,17 +6,17 @@
                     <div class="row">
                         <div class="col-md-8 offset-md-2">
                             <div class="pt-3 pb-4">
-                                <form action="">
+                                <form action="" method="POST">
                                     <div class="input-group">
                                     
                                             <input type="text" id="" name="" class="form-control" value="">
                                             <div class="input-group-append">
-                                                <button id="btnSearch" type="submit" class="btn waves-effect waves-light btn-custom"><i class="fa fa-search mr-1"></i> Search</button>
+                                                <button id="btnSearch" click='getSearch' type="submit" class="btn waves-effect waves-light btn-custom"><i class="fa fa-search mr-1"></i> Search</button>
                                             </div>
                                     </div>
                                 </form>
                                 <div class="mt-4 text-center">
-                                    <h4>Search Results For "Admin Dashboard"</h4></div>
+                                    <h4>Search Results For {{expresionFiltro}}</h4></div>
                             </div>
                         </div>
                     </div>
@@ -87,3 +87,4 @@
     </div>
     <!-- container -->
 </div>
+

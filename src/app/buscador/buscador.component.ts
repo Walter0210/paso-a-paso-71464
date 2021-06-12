@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buscador.component.css']
 })
 export class BuscadorComponent implements OnInit {
-
+  expresionFiltro = ''
   constructor() { }
 
   ngOnInit(): void {
   }
+
+}
+
+export class getSearch {
+
 
 }
