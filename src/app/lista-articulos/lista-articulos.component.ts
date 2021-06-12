@@ -7,15 +7,21 @@ import { Component, OnInit, VERSION} from '@angular/core';
 })
 export class ListaArticulosComponent implements OnInit {
   titulo: string = 'Lista de Articulos'; //le pongo asi para acostumbrarme a tipar los datos.
+  mostrarImagen: boolean = false;
   constructor() {}
   
   versionAngular() :string {
     return VERSION.full;
   }
 
+   mostrarEsconderImagen(): void{
+       this.mostrarImagen = !this.mostrarImagen;
+   }
+
+
   articulos: any[] = [
        {
-           imagen: 'src/assets/art01.png',
+           imagen: 'https://cdn.jsdelivr.net/gh/Walter0210/paso-a-paso-71464@master/src/assets/art01.jpg',
            id: 2,
            descripcion: 'Articulo X',
            codigo: 'xsd-143',

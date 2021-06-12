@@ -4,7 +4,11 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Imagen</th>
+          <th>
+              <button class="btn btn-primary"
+                       (click)='mostrarEsconderImagen()'> {{mostrarImagen ? 'Esconder' : 'Mostrar'}} Imagen
+                       </button>
+                   </th>
           <th>Descripción</th>
           <th>Código</th>
           <th>Cantidad</th>
@@ -12,10 +16,10 @@
           <th>Puntaje</th>
         </tr>
       </thead>
-      <tbody>
+
         <tbody>
                <tr *ngFor="let articulo of articulos">
-                   <td><img [src]='articulo.imagen'></td>
+                   <td><img *ngIf='mostrarImagen' [src]='articulo.imagen' [title]='articulo.descripcion'></td>
                    <td>{{articulo.descripcion}}</td>
                    <td>{{articulo.codigo}}</td>
                    <td>{{articulo.cantidad}}</td>
