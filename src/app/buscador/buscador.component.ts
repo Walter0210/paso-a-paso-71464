@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
+
 
 @Component({
   selector: 'app-buscador',
@@ -6,15 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./buscador.component.css']
 })
 export class BuscadorComponent implements OnInit {
-  expresionFiltro = ''
+  expresionFiltro  = ''
+  resultado: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-}
-
-export class getSearch {
-
-
+  getSearch():void {
+    this.resultado = true;
+  }
 }
