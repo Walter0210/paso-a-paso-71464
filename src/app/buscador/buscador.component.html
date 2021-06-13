@@ -8,7 +8,7 @@
                             <div class="pt-3 pb-4">
                                 <form action="" method="">
                                     <div class="input-group">
-                                            <input [(ngModel)]="expresionFiltro" type="text" id="filtro" name="filtro" class="form-control"/>
+                                            <input [(ngModel)]="busqueda" type="text" id="filtro" name="filtro" class="form-control"/>
                                             <div class="input-group-append">
                                                 <button id="btnSearch" (click)='getSearch()' class="btn waves-effect waves-light btn-custom"><i class="fa fa-search mr-1"></i> Buscar</button>
                                             </div>
@@ -20,7 +20,7 @@
                     <!-- end row -->
                     <div *ngIf='resultado' class="container">
                         <div class="mt-4 text-center">
-                            <h4>Resultados de "{{expresionFiltro}}"</h4>
+                            <h4>Resultados de "{{busqueda}}"</h4>
                         </div>
                         <ul class="nav nav-tabs tabs-bordered">
                             <li class="nav-item"><a href="#home" data-toggle="tab" aria-expanded="true" class="nav-link active">Todos los resultados<span class="badge badge-success ml-1">325</span></a></li>
@@ -30,7 +30,7 @@
                             <div class="tab-pane active" id="home">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div *ngFor="let documento of muchosDocumentos" class="search-item">
+                                        <div *ngFor="let documento of listDoc" class="search-item">
                                             <h4 class="mb-1"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)='loadModal(documento.nombreArchivo, documento.primerasLineas)'>{{documento.nombreArchivo}}</a></h4>
                                             <p class="mb-0 text-muted">{{documento.primerasLineas}}</p>
                                         </div>
@@ -47,7 +47,7 @@
                                                 </div>
                                                 <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                                <button type="button" class="btn btn-primary" download='file.txt'>Descargar archivo</button>
+                                                <button type="button" class="btn btn-primary"  download="file.txt">Descargar archivo</button>
                                                 </div>
                                             </div>
                                             </div>

@@ -16,20 +16,16 @@ export class BuscadorComponent implements OnInit {
   bodyDocClick: any;
   nombreDocClick: string = '';
   fileUrl: SafeResourceUrl = '';
-  idDocClick: string = '';
+  
   
 
   constructor(
     private buscador: BuscadorService,
     private archivo: ArchivoService,
-    private sanitizer: DomSanitizer
+
   ) { }
 
-  ngOnInit(): void {
-    const data = 'some text';
-    const blob = new Blob([data], { type: 'application/octet-stream' });
-    this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(blob));
-  }
+  ngOnInit(): void {}
 
   getSearch(): void {
     this.resultado = true;

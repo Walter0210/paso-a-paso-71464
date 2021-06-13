@@ -5,6 +5,10 @@ import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams} from '@angular/
   providedIn: 'root'
 })
 export class ArchivoService {
+  byteCharacters:string = '';
+  byteArray: string = '';
+  txtDoc:string = '';
+
   url:string;
   constructor(private httpclient : HttpClient) { 
         this.url='http://localhost:8080/Buscador_TPI-1.0/archivos/'
