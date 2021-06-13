@@ -10,13 +10,14 @@ import { iDocumento } from '../Modelos/iDocumento'
   styleUrls: ['./buscador.component.css']
 })
 export class BuscadorComponent implements OnInit {
-  expresionFiltro: string = ''
+  busqueda: string = ''
   resultado: boolean = false;
-  muchosDocumentos: any = [];
+  listDoc: any = [];
   bodyDocClick: any;
   nombreDocClick: string = '';
   fileUrl: SafeResourceUrl = '';
   idDocClick: string = '';
+  
 
   constructor(
     private buscador: BuscadorService,
@@ -32,7 +33,7 @@ export class BuscadorComponent implements OnInit {
 
   getSearch(): void {
     this.resultado = true;
-    this.buscador.get(this.expresionFiltro).subscribe((res) => { this.muchosDocumentos = res })
+    this.buscador.get(this.busqueda).subscribe((res) => { this.listDoc = res })
   }
 
   getTextoArchivo(idArchivo:number):void {
