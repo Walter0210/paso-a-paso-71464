@@ -1,5 +1,7 @@
 import { Component, OnInit, } from '@angular/core';
 import { BuscadorService } from '../services/buscador.service';
+import { ArchivoService } from '../services/archivo.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { iDocumento } from '../Modelos/iDocumento'
 
 @Component({
@@ -8,19 +10,38 @@ import { iDocumento } from '../Modelos/iDocumento'
   styleUrls: ['./buscador.component.css']
 })
 export class BuscadorComponent implements OnInit {
-  expresionFiltro = ''
+  expresionFiltro: string = ''
   resultado: boolean = false;
   muchosDocumentos: any = [];
-  constructor(private buscador: BuscadorService) { }
+  bodyDocClick: any;
+  nombreDocClick: string = '';
+  fileUrl: SafeResourceUrl = '';
+  idDocClick: string = '';
+
+  constructor(
+    private buscador: BuscadorService,
+    private archivo: ArchivoService,
+    private sanitizer: DomSanitizer
+  ) { }
 
   ngOnInit(): void {
-
+    const data = 'some text';
+    const blob = new Blob([data], { type: 'application/octet-stream' });
+    this.fileUrl = this.sanitizer.bypassSecurityTrustResourceUrl(window.URL.createObjectURL(blob));
   }
 
   getSearch(): void {
     this.resultado = true;
-    this.buscador.get(this.expresionFiltro).subscribe((res) => { this.muchosDocumentos = res; console.log(res) })
-    
+    this.buscador.get(this.expresionFiltro).subscribe((res) => { this.muchosDocumentos = res })
+  }
 
+  getTextoArchivo(idArchivo:number):void {
+    this.archivo.getArchivo(idArchivo).subscribe((res) => { this.bodyDocClick = res; console.log(this.bodyDocClick) })
+    
+  }
+
+  loadModal(nombreDoc:string, preview:string):void {
+    this.nombreDocClick = nombreDoc;
+    this.bodyDocClick = preview;
   }
 }

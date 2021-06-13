@@ -31,9 +31,26 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div *ngFor="let documento of muchosDocumentos" class="search-item">
-                                            <h4 class="mb-1"><a href="#">{{documento["nombreArchivo"]}}</a></h4>
-                                            <!-- <div class="font-13 text-success mb-3">https://www.bootdey.com</div> -->
+                                            <h4 class="mb-1"><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)='loadModal(documento.nombreArchivo, documento.primerasLineas)'>{{documento.nombreArchivo}}</a></h4>
                                             <p class="mb-0 text-muted">{{documento.primerasLineas}}</p>
+                                        </div>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">{{nombreDocClick}}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                {{bodyDocClick}}
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                <button type="button" class="btn btn-primary" download='file.txt'>Descargar archivo</button>
+                                                </div>
+                                            </div>
+                                            </div>
                                         </div>
 
                                         <!-- <ul class="pagination justify-content-center pagination-split mt-0">
